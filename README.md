@@ -2,6 +2,54 @@
 
 ---
 
+* [Introdução](#introdução)
+* [Tecnologias Utilizadas](#tecnologias-utilizadas)
+* [Estrutura de Pastas](#estrutura-de-pastas)
+* [Como Executar](#como-executar)
+
+  * [Parte 1 — Banco de Dados Oracle](#parte-1--banco-de-dados-oracle)
+  * [Parte 2 — Dashboard em Python](#parte-2--dashboard-em-python)
+* [ETAPA 1 – Conexão com o Oracle SQL Developer](#etapa-1--conexão-com-o-oracle-sql-developer)
+
+  * [1. Criando uma nova conexão](#1-criando-uma-nova-conexão)
+  * [2. Preenchendo os dados da conexão](#2-preenchendo-os-dados-da-conexão)
+  * [3. Conexão criada com sucesso](#3-conexão-criada-com-sucesso)
+* [ETAPA 2 – Configuração do Ambiente](#etapa-2--configuração-do-ambiente)
+
+  * [4. Acessando o menu de ferramentas](#4-acessando-o-menu-de-ferramentas)
+  * [5. Selecionando Preferências](#5-selecionando-preferências)
+  * [6. Configuração de Banco de Dados > NLS](#6-configuração-de-banco-de-dados--nls)
+  * [7. Alterando separadores decimais](#7-alterando-separadores-decimais)
+* [ETAPA 3 – Importação dos Dados](#etapa-3--importação-dos-dados)
+
+  * [8. Importando dados](#8-importando-dados)
+  * [9. Selecionando a base CSV](#9-selecionando-a-base-csv)
+  * [10. Nomeando a tabela](#10-nomeando-a-tabela)
+  * [11. Conferindo os dados](#11-conferindo-os-dados)
+  * [12. Visualização da coluna umidade](#12-visualização-da-coluna-umidade)
+  * [13. Alterando o tipo da coluna umidade](#13-alterando-o-tipo-da-coluna-umidade)
+  * [14. Visualização da coluna pH](#14-visualização-da-coluna-ph)
+  * [15. Alterando o tipo da coluna pH](#15-alterando-o-tipo-da-coluna-ph)
+  * [16. Finalizando a importação](#16-finalizando-a-importação)
+  * [17. Confirmação de sucesso](#17-confirmação-de-sucesso)
+* [ETAPA 4 – Consultas SQL](#etapa-4--consultas-sql)
+
+  * [Consulta 1 – Exibir todos os registros](#consulta-1--exibir-todos-os-registros)
+  * [Consulta 2 – Registros com umidade maior que 70](#consulta-2--registros-com-umidade-maior-que-70)
+  * [Consulta 3 – Registros com pH menor que 50](#consulta-3--registros-com-ph-menor-que-50)
+  * [Consulta 4 – Contagem total de registros](#consulta-4--contagem-total-de-registros)
+  * [Consulta 5 – Média da umidade](#consulta-5--média-da-umidade)
+  * [Consulta 6 – Maior e menor valor de pH](#consulta-6--maior-e-menor-valor-de-ph)
+  * [Consulta 7 – Registros onde houve chuva](#consulta-7--registros-onde-houve-chuva)
+  * [Consulta 8 – Registros com Nitrogênio ativo](#consulta-8--registros-com-nitrogênio-ativo)
+  * [Consulta 9 – Total de registros com chuva](#consulta-9--total-de-registros-com-chuva)
+  * [Consulta 10 – Ordenação por maior umidade](#consulta-10--ordenação-por-maior-umidade)
+* [ETAPA 5 – Dashboard em Python (IR ALÉM)](#etapa-5--dashboard-em-python-ir-além)
+* [Conclusão](#conclusão)
+* [Vídeo Demonstrativo](#vídeo-demonstrativo)
+
+---
+
 ## Introdução
 
 O PBL (Project-Based Learning) do curso de Inteligência Artificial simula o crescimento de uma startup fictícia chamada **FarmTech Solutions**, que atua como uma consultoria em soluções tecnológicas para o agronegócio.
