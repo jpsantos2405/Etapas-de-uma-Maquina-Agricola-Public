@@ -2,6 +2,8 @@
 
 ---
 
+## Sumário
+
 * [Introdução](#introdução)
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
 * [Estrutura de Pastas](#estrutura-de-pastas)
