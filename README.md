@@ -1185,6 +1185,53 @@ Essa etapa agregou inteligência visual ao projeto e facilitou a análise dos da
 ![Imagem 28](imagens/28.jpg)
 ![Imagem 29](imagens/29.jpg)
 
+# ETAPA 6 MACHINE LEARNING NO AGRONEGÓCIO (IR ALÉM)
+
+### 6.1 Arquitetura Modular (ml_utils.py)
+Toda a carga pesada de processamento matemático, tratamento de dados, plotagem de gráficos com Matplotlib/Seaborn e o ciclo de vida dos modelos preditivos foram isolados no arquivo helper ml_utils.py. O arquivo dashboard.py atua estritamente na camada de visualização (Streamlit), consumindo dados limpos e componentes de gráficos dinamicamente.
+
+### 6.2 Pipeline de Análise Exploratória (EDA)
+
+O sistema executa de forma automática 5 gráficos descritivos e estatísticos estruturados para mapear o comportamento físico-químico do ecossistema:
+
+- Histograma de Umidade com Curva KDE: Mapeia a densidade de umidade e sua distribuição em períodos secos versus chuvosos.
+
+- Boxplot Analítico de pH por Clima: Demonstra o impacto da precipitação na acidez e alcalinidade do solo, auxiliando no entendimento do estresse químico da planta.
+
+- Heatmap de Correlação de Pearson: Uma matriz de calor que calcula o grau de dependência linear entre todas as variáveis (sensores e nutrientes) de forma simultânea.
+
+- Countplot de Nitrogênio (N): Gráfico de barras agrupado detalhando a presença ou ausência de nitrogênio correlacionada à umidade do solo.
+
+- Gráfico de Dispersão (Scatter Plot): Cruza as métricas contínuas de Umidade vs pH, segmentadas por cor de acordo com a ocorrência de chuvas, gerando uma visão espacial das janelas ideais de plantio.
+
+### 6.3 Discussão de Perfis de Solo
+Buscando extrair insights agronômicos acionáveis, o sistema analisa os dados e agrupa as informações em 3 recortes ambientais distintos, exibindo médias comparativas de resiliência e retenção de água:
+
+Perfil N+K: Amostras de solos ricos em Nitrogênio e Potássio.
+
+Perfil P+K: Amostras focadas em Fósforo e Potássio.
+
+Perfil Geral: Média consolidada de todo o ecossistema coletado para fins de linha de base (baseline).
+
+### 6.4 Modelagem Preditiva com 5 Algoritmos
+ 
+Foram implementados, testados e comparados de forma concorrente 5 algoritmos de classificação distintos:
+
+- Regressão Logística 
+- Decision Tree 
+- Random Forest Classifier 
+- Gradient Boosting Classifier 
+- K-Nearest Neighbors / KNN 
+
+O sistema divide o dataset original (70% para treino e 30% para teste) e avalia cada modelo através de 4 métricas:
+
+ - Acurácia 
+ - Precisão 
+ - Recall  
+ - F1-Score 
+ 
+ Ao final, um gráfico de barras comparativo é renderizado em tela e o dashboard indica dinamicamente o algoritmo vencedor para o usuário.
+
 ---
 
 # Conclusão

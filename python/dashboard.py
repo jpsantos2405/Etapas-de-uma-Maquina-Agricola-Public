@@ -1,3 +1,4 @@
+import ml_utils as ml
 import streamlit as st
 import pandas as pd
 import oracledb
@@ -152,6 +153,71 @@ filtro = st.selectbox(
 
 if filtro != "Todos":
     df = df[df["Sugestão de Irrigação"] == filtro]
+
+
+# ---------------- SEÇÃO MACHINE LEARNING (PROGRAMA IR ALÉM) ----------------
+st.divider()
+st.header("🧠 Inteligência Artificial & Análise de Solo")
+
+aba_eda, aba_perfis, aba_ml = st.tabs([
+    "📊 Análise Exploratória", 
+    "🌱 Perfis Ideais de Solo", 
+    "🤖 Modelagem Preditiva"
+])
+
+with aba_eda:
+    st.subheader("Análise de Variáveis Orientada por Gráficos")
+    st.markdown("Confira as distribuições e correlações físicas e químicas capturadas pelos sensores:")
+    
+    # função que gera os gráficos 
+    figuras = ml.gerar_analise_exploratoria(df)
+    
+    col_g1, col_g2 = st.columns(2)
+    with col_g1:
+        st.pyplot(figuras[0])
+        st.caption("**Análise Descritiva:** Há uma clara separação na umidade quando há ocorrência de chuva, indicando forte fator preditivo.")
+        st.pyplot(figuras[2])
+        st.caption("**Análise Descritiva:** O mapa de calor destaca forte correlação positiva entre umidade e chuva.")
+        st.pyplot(figuras[4])
+        st.caption("**Análise Descritiva:** Dispersão mapeia zonas químicas ideais de pH e umidade onde ocorrem variações.")
+    
+    with col_g2:
+        st.pyplot(figuras[1])
+        st.caption("**Análise Descritiva:** O boxplot mostra que o pH do solo varia sutilmente em períodos chuvosos devido à acidez da água.")
+        st.pyplot(figuras[3])
+        st.caption("**Análise Descritiva:** Distribuição de Nitrogênio em relação a eventos climáticos.")
+
+with aba_perfis:
+    st.subheader("Discussão sobre o Perfil Ideal de Solo/Clima")
+    st.markdown("Estudo comparativo focado em entender a resiliência e as características de 3 recortes de ambientes:")
+    
+    df_perfis = ml.obter_perfis_solo(df)
+    st.dataframe(df_perfis, use_container_width=True)
+    
+    st.info(
+        "💡 **Conclusão Agronômica:** Solos ricos em N+K apresentam dinâmicas distintas de retenção "
+        "de umidade comparados ao perfil P+K, servindo como base técnica para mapear o ambiente ideal "
+        "para diferentes tipos de cultivares."
+    )
+
+with aba_ml:
+    st.subheader("Modelagem Preditiva e Avaliação de Performance")
+    st.markdown("Resultados do treinamento de **5 algoritmos distintos** para previsão de eventos:")
+    
+    # Executa a pipeline retorna as métricas 
+    df_metricas, fig_comparativa = ml.treinar_e_avaliar_modelos(df)
+    
+    col_m1, col_m2 = st.columns([3, 2])
+    with col_m1:
+        st.markdown("**Tabela Comparativa de Métricas:**")
+        st.dataframe(df_metricas, use_container_width=True)
+    
+    with col_m2:
+        st.pyplot(fig_comparativa)
+        
+    # Identifica o algoritmo vencedor 
+    melhor_modelo = df_metricas.sort_values(by='Acurácia', ascending=False).iloc[0]['Modelo']
+    st.success(f"🏆 **Conclusão:** O algoritmo com melhor performance geral para o dataset foi o **{melhor_modelo}**.")
 
 st.dataframe(df, use_container_width=True)
 
