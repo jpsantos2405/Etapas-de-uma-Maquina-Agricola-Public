@@ -154,6 +154,8 @@ filtro = st.selectbox(
 if filtro != "Todos":
     df = df[df["Sugestão de Irrigação"] == filtro]
 
+st.dataframe(df, use_container_width=True)
+
 
 # ---------------- SEÇÃO MACHINE LEARNING (PROGRAMA IR ALÉM) ----------------
 st.divider()
@@ -218,7 +220,5 @@ with aba_ml:
     # Identifica o algoritmo vencedor 
     melhor_modelo = df_metricas.sort_values(by='Acurácia', ascending=False).iloc[0]['Modelo']
     st.success(f"🏆 **Conclusão:** O algoritmo com melhor performance geral para o dataset foi o **{melhor_modelo}**.")
-
-st.dataframe(df, use_container_width=True)
 
 st.success("Dashboard carregada com sucesso.")

@@ -4,51 +4,54 @@
 
 ## Sumário
 
-* [Introdução](#introdução)
-* [Tecnologias Utilizadas](#tecnologias-utilizadas)
-* [Estrutura de Pastas](#estrutura-de-pastas)
-* [Como Executar](#como-executar)
+## Sumário
 
-  * [Parte 1 — Banco de Dados Oracle](#parte-1--banco-de-dados-oracle)
-  * [Parte 2 — Dashboard em Python](#parte-2--dashboard-em-python)
-* [ETAPA 1 – Conexão com o Oracle SQL Developer](#etapa-1--conexão-com-o-oracle-sql-developer)
-
-  * [1. Criando uma nova conexão](#1-criando-uma-nova-conexão)
-  * [2. Preenchendo os dados da conexão](#2-preenchendo-os-dados-da-conexão)
-  * [3. Conexão criada com sucesso](#3-conexão-criada-com-sucesso)
-* [ETAPA 2 – Configuração do Ambiente](#etapa-2--configuração-do-ambiente)
-
-  * [4. Acessando o menu de ferramentas](#4-acessando-o-menu-de-ferramentas)
-  * [5. Selecionando Preferências](#5-selecionando-preferências)
-  * [6. Configuração de Banco de Dados > NLS](#6-configuração-de-banco-de-dados--nls)
-  * [7. Alterando separadores decimais](#7-alterando-separadores-decimais)
-* [ETAPA 3 – Importação dos Dados](#etapa-3--importação-dos-dados)
-
-  * [8. Importando dados](#8-importando-dados)
-  * [9. Selecionando a base CSV](#9-selecionando-a-base-csv)
-  * [10. Nomeando a tabela](#10-nomeando-a-tabela)
-  * [11. Conferindo os dados](#11-conferindo-os-dados)
-  * [12. Visualização da coluna umidade](#12-visualização-da-coluna-umidade)
-  * [13. Alterando o tipo da coluna umidade](#13-alterando-o-tipo-da-coluna-umidade)
-  * [14. Visualização da coluna pH](#14-visualização-da-coluna-ph)
-  * [15. Alterando o tipo da coluna pH](#15-alterando-o-tipo-da-coluna-ph)
-  * [16. Finalizando a importação](#16-finalizando-a-importação)
-  * [17. Confirmação de sucesso](#17-confirmação-de-sucesso)
-* [ETAPA 4 – Consultas SQL](#etapa-4--consultas-sql)
-
-  * [Consulta 1 – Exibir todos os registros](#consulta-1--exibir-todos-os-registros)
-  * [Consulta 2 – Registros com umidade maior que 70](#consulta-2--registros-com-umidade-maior-que-70)
-  * [Consulta 3 – Registros com pH menor que 50](#consulta-3--registros-com-ph-menor-que-50)
-  * [Consulta 4 – Contagem total de registros](#consulta-4--contagem-total-de-registros)
-  * [Consulta 5 – Média da umidade](#consulta-5--média-da-umidade)
-  * [Consulta 6 – Maior e menor valor de pH](#consulta-6--maior-e-menor-valor-de-ph)
-  * [Consulta 7 – Registros onde houve chuva](#consulta-7--registros-onde-houve-chuva)
-  * [Consulta 8 – Registros com Nitrogênio ativo](#consulta-8--registros-com-nitrogênio-ativo)
-  * [Consulta 9 – Total de registros com chuva](#consulta-9--total-de-registros-com-chuva)
-  * [Consulta 10 – Ordenação por maior umidade](#consulta-10--ordenação-por-maior-umidade)
-* [ETAPA 5 – Dashboard em Python (IR ALÉM)](#etapa-5--dashboard-em-python-ir-além)
-* [Conclusão](#conclusão)
-* [Vídeo Demonstrativo](#vídeo-demonstrativo)
+- [Introdução](#introdução)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Estrutura de Pastas](#estrutura-de-pastas)
+- [Como Executar](#como-executar)
+  - [Parte 1 — Banco de Dados Oracle](#parte-1--banco-de-dados-oracle)
+  - [Parte 2 — Dashboard em Python](#parte-2--dashboard-em-python)
+  - [Parte 3 — Instalação das Bibliotecas de Machine Learning](#parte-3--instalação-das-bibliotecas-de-machine-learning)
+- [ETAPA 1 – Conexão com o Oracle SQL Developer](#etapa-1--conexão-com-o-oracle-sql-developer)
+  - [1. Criando uma nova conexão](#1-criando-uma-nova-conexão)
+  - [2. Preenchendo os dados da conexão](#2-preenchendo-os-dados-da-conexão)
+  - [3. Conexão criada com sucesso](#3-conexão-criada-com-sucesso)
+- [ETAPA 2 – Configuração do Ambiente](#etapa-2--configuração-do-ambiente)
+  - [4. Acessando o menu de ferramentas](#4-acessando-o-menu-de-ferramentas)
+  - [5. Selecionando Preferências](#5-selecionando-preferências)
+  - [6. Configuração de Banco de Dados > NLS](#6-configuração-de-banco-de-dados--nls)
+  - [7. Alterando separadores decimais](#7-alterando-separadores-decimais)
+- [ETAPA 3 – Importação dos Dados](#etapa-3--importação-dos-dados)
+  - [8. Importando dados](#8-importando-dados)
+  - [9. Selecionando a base CSV](#9-selecionando-a-base-csv)
+  - [10. Nomeando a tabela](#10-nomeando-a-tabela)
+  - [11. Conferindo os dados](#11-conferindo-os-dados)
+  - [12. Visualização da coluna umidade](#12-visualização-da-coluna-umidade)
+  - [13. Alterando o tipo da coluna umidade](#13-alterando-o-tipo-da-coluna-umidade)
+  - [14. Visualização da coluna pH](#14-visualização-da-coluna-ph)
+  - [15. Alterando o tipo da coluna pH](#15-alterando-o-tipo-da-coluna-ph)
+  - [16. Finalizando a importação](#16-finalizando-a-importação)
+  - [17. Confirmação de sucesso](#17-confirmação-de-sucesso)
+- [ETAPA 4 – Consultas SQL](#etapa-4--consultas-sql)
+  - [Consulta 1 – Exibir todos os registros](#consulta-1--exibir-todos-os-registros)
+  - [Consulta 2 – Registros com umidade maior que 70](#consulta-2--registros-com-umidade-maior-que-70)
+  - [Consulta 3 – Registros com pH menor que 5.0](#consulta-3--registros-com-ph-menor-que-50)
+  - [Consulta 4 – Contagem total de registros](#consulta-4--contagem-total-de-registros)
+  - [Consulta 5 – Média da umidade](#consulta-5--média-da-umidade)
+  - [Consulta 6 – Maior e menor valor de pH](#consulta-6--maior-e-menor-valor-de-ph)
+  - [Consulta 7 – Registros onde houve chuva](#consulta-7--registros-onde-houve-chuva)
+  - [Consulta 8 – Registros com Nitrogênio ativo](#consulta-8--registros-com-nitrogênio-ativo)
+  - [Consulta 9 – Total de registros com chuva](#consulta-9--total-de-registros-com-chuva)
+  - [Consulta 10 – Ordenação por maior umidade](#consulta-10--ordenação-por-maior-umidade)
+- [ETAPA 5 – Dashboard em Python (IR ALÉM)](#etapa-5--dashboard-em-python-ir-além)
+- [ETAPA 6 – Machine Learning no Agronegócio (IR ALÉM)](#etapa-6--machine-learning-no-agronegócio-ir-além)
+  - [6.1 Arquitetura Modular (ml_utils.py)](#61-arquitetura-modular-ml_utilspy)
+  - [6.2 Pipeline de Análise Exploratória (EDA)](#62-pipeline-de-análise-exploratória-eda)
+  - [6.3 Discussão de Perfis de Solo](#63-discussão-de-perfis-de-solo)
+  - [6.4 Modelagem Preditiva com 5 Algoritmos](#64-modelagem-preditiva-com-5-algoritmos)
+- [Conclusão](#conclusão)
+- [Vídeo Demonstrativo](#vídeo-demonstrativo)
 
 ---
 
@@ -66,6 +69,7 @@ O projeto envolveu:
 - Criação da tabela `dados_sensores`
 - Execução de consultas SQL
 - Desenvolvimento de dashboard interativa com Streamlit
+- Implementação de uma camada de Machine Learning com 5 modelos preditivos, análise exploratória automatizada (EDA) e comparação de performance entre algoritmos
 
 ---
 
@@ -80,6 +84,9 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias e ferramentas:
 - Streamlit
 - Pandas
 - Configparser
+- Matplotlib
+- Seaborn
+- Scikit-learn
 - OracleDB (biblioteca de conexão Python com Oracle)
 - CSV (base de dados dos sensores)
 - GitHub
@@ -96,18 +103,29 @@ PROJETO-FASE3/
 │   ├── 01.jpeg
 │   ├── 02.jpeg
 │   ├── 03.jpeg
+│   ├── 04.jpeg
+│   ├── 05.jpeg
+│   ├── 06.jpeg
+│   ├── 07.jpeg
+│   ├── 08.jpeg
 │   ├── ...
 │   ├── 27.jpeg
 │   ├── 28.jpg
-│   └── 29.jpg
+│   ├── 29.jpg
+│   ├── 30.jpg
+│   ├── 31.jpg
+│   ├── 32.png
+│   ├── 33.png
+│   └── 33.png
 │
 ├── sql/
 │   └── consultas.sql
 │
 ├── python/
+│   ├── .gitignore
 │   ├── config.ini (deve ser criado)
 │   ├── dashboard.py
-│   └── config.ini
+│   └── ml_utils.py
 │
 ├── dados/
 │   └── dados.csv
@@ -154,7 +172,7 @@ sql
 
 1. Instalar as bibliotecas necessárias
 ```Bash
-pip install streamlit pandas oracledb configparser
+pip install streamlit pandas oracledb configparser matplotlib seaborn scikit-learn
 ```
 
 2. Criar o arquivo ```config.ini```
@@ -1204,6 +1222,10 @@ O sistema executa de forma automática 5 gráficos descritivos e estatísticos e
 
 - Gráfico de Dispersão (Scatter Plot): Cruza as métricas contínuas de Umidade vs pH, segmentadas por cor de acordo com a ocorrência de chuvas, gerando uma visão espacial das janelas ideais de plantio.
 
+![Imagem 30](imagens/30.jpg)
+![Imagem 31](imagens/31.jpg)
+
+
 ### 6.3 Discussão de Perfis de Solo
 Buscando extrair insights agronômicos acionáveis, o sistema analisa os dados e agrupa as informações em 3 recortes ambientais distintos, exibindo médias comparativas de resiliência e retenção de água:
 
@@ -1212,6 +1234,9 @@ Perfil N+K: Amostras de solos ricos em Nitrogênio e Potássio.
 Perfil P+K: Amostras focadas em Fósforo e Potássio.
 
 Perfil Geral: Média consolidada de todo o ecossistema coletado para fins de linha de base (baseline).
+
+![Imagem 32](imagens/32.png)
+
 
 ### 6.4 Modelagem Preditiva com 5 Algoritmos
  
@@ -1231,6 +1256,9 @@ O sistema divide o dataset original (70% para treino e 30% para teste) e avalia 
  - F1-Score 
  
  Ao final, um gráfico de barras comparativo é renderizado em tela e o dashboard indica dinamicamente o algoritmo vencedor para o usuário.
+
+ ![Imagem 33](imagens/33.png)
+
 
 ---
 
