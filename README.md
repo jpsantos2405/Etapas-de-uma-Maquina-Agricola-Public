@@ -4,8 +4,6 @@
 
 ## Sumário
 
-## Sumário
-
 - [Introdução](#introdução)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Estrutura de Pastas](#estrutura-de-pastas)
@@ -1278,4 +1276,8 @@ A integração entre Banco de Dados, Python e Inteligência Artificial represent
 
 YouTube (não listado):
 
-(Adicionar link do vídeo)
+<p align="center">
+  <a href="https://youtu.be/Er_wKxeHBlw?si=_VKNAh13Ef7jbJEF">
+      <img src="https://img.youtube.com/vi/Er_wKxeHBlw/maxresdefault.jpg" alt="Vídeo de demonstração">
+        </a>
+        </p>
